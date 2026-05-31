@@ -1,30 +1,33 @@
 ﻿# K.F American Flow
 
-Sitio web de presentación para boutique de moda urbana americana, construido con PHP, Bootstrap 5 local y JavaScript puro.
+Sitio web de presentación para boutique de moda urbana americana.
+
+Versión final del proyecto: **1.0.0-final**
 
 ## 📌 Estado del proyecto
 
 - Versión final para entrega.
-- Navegación fija y responsive en móviles.
-- Sección de suscripciones mayoristas realista para presentación B2B.
+- Navegación fija y responsive para escritorio y móvil.
+- Sección mayorista ficticia añadida para presentaciones B2B.
 - Formulario de contacto con validación y backend PHP.
-- Mapa de ubicación integrado en la página `ubicacion.php`.
+- Mapa integrado en `ubicacion.php`.
+- No hay `package.json`, `node_modules` ni herramientas de build.
 
 ## 🎯 Características principales
 
 ### Secciones
 
-- **Hero**: Banner principal con imagen, título y CTA.
-- **Colección Destacada**: Tarjetas visuales con productos.
-- **Mayoristas**: Planes mayoristas ficticios para pedidos grandes.
-- **Nuestra esencia**: Mensaje de marca y valores.
-- **Productos**: Página de catálogo visual con tarjetas.
-- **Ubicación**: Mapa integrado y detalles de tienda.
-- **Contacto**: Formulario con validación y envío a backend.
+- **Hero**: Banner principal con título, texto y botón CTA.
+- **Colección Destacada**: Tres tarjetas de producto en la página de inicio.
+- **Mayoristas**: Sección de planes ficticios para pedidos grandes.
+- **Nuestra esencia**: Bloque de valores y mensaje de marca.
+- **Productos**: Catálogo visual de productos.
+- **Ubicación**: Mapa de Google Maps embebido.
+- **Contacto**: Formulario con campos obligatorios y envío al backend.
 
-## 🧩 Tecnologías utilizadas
+### Tecnologías
 
-### Frontend
+#### Frontend
 
 - HTML5 semántico
 - Bootstrap 5 local (`bootstrap/css`, `bootstrap/js`)
@@ -32,16 +35,12 @@ Sitio web de presentación para boutique de moda urbana americana, construido co
 - JavaScript nativo en `js/app.js`
 - Font Awesome CDN para iconos
 
-### Backend
+#### Backend
 
 - PHP
-- MySQL(contactos)
+- MySQL / MariaDB para almacenamiento de contactos
 - `includes/config.php` para conexión y sanitización
-- `includes/process_contact.php` para el envío del formulario
-
-### Nota
-
-No hay herramientas de build ni dependencias de Node.js en este proyecto.
+- `includes/process_contact.php` para procesar envíos
 
 ## 📁 Estructura del proyecto
 
@@ -51,44 +50,44 @@ proyecto_final/
 │   └── `js/`
 ├── `css/`
 │   └── `style.css`             ← Estilos personalizados
-├── `fotos/`                    ← Imágenes locales utilizadas
+├── `fotos/`                    ← Imágenes locales del sitio
 ├── `includes/`                 ← Componentes y backend PHP
 │   ├── `config.php`            ← Configuración de base de datos y validación
 │   ├── `footer.php`            ← Pie de página global
-│   ├── `header.php`            ← Cabecera fija y menú
-│   └── `process_contact.php`   ← Envío y guardado del formulario
+│   ├── `header.php`            ← Cabecera fija y navbar
+│   └── `process_contact.php`   ← Envío y guardado de formulario
 ├── `js/`
-│   └── `app.js`                ← Animaciones y lógica interactiva
+│   └── `app.js`                ← Animaciones, validación y lógica interactiva
 ├── `index.php`                 ← Página principal con maqueta y secciones
 ├── `productos.php`             ← Catálogo visual de productos
 ├── `nosotros.php`              ← Página de marca y valores
-├── `ubicacion.php`             ← Página con ubicación y mapa
+├── `ubicacion.php`             ← Página con mapa y dirección
 ├── `contacto.php`              ← Formulario de contacto
 └── `README.md`                 ← Documentación del proyecto
 
-## 🖼️ Maqueta y estructura de la página
+## 🖼️ Maqueta de la página
 
-La maqueta del sitio está construida principalmente en `index.php` y se organiza así:
+La maqueta del sitio se organiza principalmente en `index.php`:
 
-- **Navbar**: menú fijo con enlaces a las páginas principales.
-- **Hero**: imagen destacada, mensaje de marca, botón de llamada a la acción.
-- **Colección Destacada**: tres tarjetas de producto con imágenes.
-- **Sección mayorista**: tres planes ficticios para ventas al por mayor.
-- **Nuestra esencia**: propuesta de valor de la marca y sus atributos.
-- **Galería secundaria**: presentación visual adicional con overlay.
-- **CTA final**: invitación a visitar el catálogo.
+- **Navbar fijo** con enlaces a secciones principales.
+- **Hero** con imagen de portada, título y botón de llamada a la acción.
+- **Colección destacada** con tarjetas de producto sin precios.
+- **Sección mayorista** con tres planes de venta al por mayor.
+- **Bloque de marca** con valores y mensaje de estilo.
+- **Galería secundaria** con imagen de apoyo y overlay.
+- **CTA final** para invitar a explorar el catálogo.
 
-## 🛠️ Funcionalidades clave
+## 🛠️ Funcionalidades JavaScript
 
-- **Validación de formulario** en frontend y backend.
-- **Formulario AJAX** con envío a `includes/process_contact.php`.
-- **Mapa embebido** en `ubicacion.php` con Google Maps.
-- **Animaciones suaves** en la entrada de secciones y tarjetas.
-- **Estructura modular** con cabecera y pie comunes en `includes/`.
+- **Navegación responsive**: menú colapsable en móvil.
+- **Scroll animations**: entradas suaves para secciones con `IntersectionObserver`.
+- **Validación de formulario**: validación en frontend antes del envío.
+- **Envío AJAX**: formulario de `contacto.php` se envía a `includes/process_contact.php`.
+- **Animaciones de tarjetas**: hover y transiciones en tarjetas de producto.
 
 ## 📊 Base de datos
 
-El proyecto espera una base de datos MySQL llamada `kf_american_flow` y una tabla `contactos`.
+El proyecto usa una base de datos MySQL llamada `kf_american_flow` y una tabla `contactos`.
 
 Campos esperados:
 
@@ -101,17 +100,18 @@ Campos esperados:
 - `fecha_creacion`
 - `estado`
 
-> Nota: no se incluye script SQL en este repositorio.
+> Nota: el script SQL no está incluido en el repositorio.
 
 ## 🚀 Cómo ejecutar
 
 1. Copia el proyecto en un servidor PHP local (XAMPP, WAMP, Laragon, etc.).
-2. Activa MySQL.
+2. Activa Apache y MySQL.
 3. Ajusta las credenciales en `includes/config.php`.
 4. Abre `index.php` en el navegador.
 
 ## 📌 Observaciones
 
-- El proyecto es una maqueta de presentación, no una tienda con pago real.
+- Este proyecto es una maqueta de presentación, no un ecommerce real.
 - El contacto principal se maneja por teléfono: `809 395 5980`.
-- El email se utiliza solo dentro del formulario de contacto.
+- El email se usa solo dentro del formulario de contacto.
+- No hay scripts de build, dependencias npm ni entornos de compilación.
