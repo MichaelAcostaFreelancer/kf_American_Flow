@@ -1,6 +1,6 @@
 ﻿# K.F AMERICAN FLOW
 
-Versión final del proyecto: **1.0.0-final**
+Versión final del proyecto
 
 Sitio web responsivo de presentación para boutique de moda urbana americana, construido con PHP, Bootstrap 5 local y JavaScript puro.
 
@@ -11,7 +11,6 @@ Sitio web responsivo de presentación para boutique de moda urbana americana, co
 - Sección mayorista ficticia para ofertas B2B.
 - Formulario de contacto con validación y backend PHP.
 - Mapa integrado en `ubicacion.php`.
-- No hay `package.json`, `node_modules` ni herramientas de build.
 
 ## 🎯 Características principales
 
@@ -38,7 +37,7 @@ Sitio web responsivo de presentación para boutique de moda urbana americana, co
 #### Backend
 
 - PHP
-- MySQL / MariaDB para almacenamiento de contactos
+- MySQL para almacenamiento de contactos
 - `includes/config.php` para conexión y sanitización
 - `includes/process_contact.php` para procesar envíos
 
@@ -110,7 +109,7 @@ Campos esperados:
 - `fecha_creacion`
 - `estado`
 
-> Nota: no se incluye script SQL en el repositorio.
+> Nota: no se incluye script SQL en esta carpeta pero en la anterior esta la Base De Datos.
 
 ## 🚀 Cómo ejecutar
 
@@ -121,7 +120,6 @@ Campos esperados:
 
 ## 📌 Observaciones
 
-- El proyecto es una maqueta de presentación, no un ecommerce completo.
+- El proyecto esta hecho por las peticiones del clientes mas no esta hecho para que se lo queden.
 - El contacto principal se maneja por teléfono: `809 395 5980`.
 - El email se usa únicamente en el formulario de contacto.
-- No hay `package.json`, `node_modules` ni entorno de build.
