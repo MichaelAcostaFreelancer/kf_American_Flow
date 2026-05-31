@@ -1,80 +1,94 @@
 ﻿# K.F American Flow
 
-Documentación técnica del proyecto de maqueta web para una boutique de moda urbana americana.
+Sitio web de presentación para boutique de moda urbana americana, construido con PHP, Bootstrap 5 local y JavaScript puro.
 
-## Estructura de Archivos
+## 📌 Estado del proyecto
+
+- Versión final para entrega.
+- Navegación fija y responsive en móviles.
+- Sección de suscripciones mayoristas realista para presentación B2B.
+- Formulario de contacto con validación y backend PHP.
+- Mapa de ubicación integrado en la página `ubicacion.php`.
+
+## 🎯 Características principales
+
+### Secciones
+
+- **Hero**: Banner principal con imagen, título y CTA.
+- **Colección Destacada**: Tarjetas visuales con productos.
+- **Mayoristas**: Planes mayoristas ficticios para pedidos grandes.
+- **Nuestra esencia**: Mensaje de marca y valores.
+- **Productos**: Página de catálogo visual con tarjetas.
+- **Ubicación**: Mapa integrado y detalles de tienda.
+- **Contacto**: Formulario con validación y envío a backend.
+
+## 🧩 Tecnologías utilizadas
+
+### Frontend
+
+- HTML5 semántico
+- Bootstrap 5 local (`bootstrap/css`, `bootstrap/js`)
+- CSS personalizado en `css/style.css`
+- JavaScript nativo en `js/app.js`
+- Font Awesome CDN para iconos
+
+### Backend
+
+- PHP
+- MySQL(contactos)
+- `includes/config.php` para conexión y sanitización
+- `includes/process_contact.php` para el envío del formulario
+
+### Nota
+
+No hay herramientas de build ni dependencias de Node.js en este proyecto.
+
+## 📁 Estructura del proyecto
 
 proyecto_final/
-├── `bootstrap/`                ← Librería Bootstrap local (CSS y JS)
+├── `bootstrap/`                ← Librería Bootstrap local
 │   ├── `css/`
 │   └── `js/`
 ├── `css/`
-│   └── `style.css`             ← Estilos personalizados del sitio
-├── `fotos/`                    ← Imágenes locales utilizadas en la maqueta
-├── `includes/`                 ← Componentes reutilizables y backend PHP
-│   ├── `config.php`            ← Configuración de base de datos y funciones de validación
+│   └── `style.css`             ← Estilos personalizados
+├── `fotos/`                    ← Imágenes locales utilizadas
+├── `includes/`                 ← Componentes y backend PHP
+│   ├── `config.php`            ← Configuración de base de datos y validación
 │   ├── `footer.php`            ← Pie de página global
-│   ├── `header.php`            ← Cabecera fija y menú de navegación
-│   └── `process_contact.php`   ← Lógica de envío y guardado del formulario
+│   ├── `header.php`            ← Cabecera fija y menú
+│   └── `process_contact.php`   ← Envío y guardado del formulario
 ├── `js/`
-│   └── `app.js`                ← Animaciones, validación y comportamiento interactivo
-├── `index.php`                 ← Página principal con maqueta, productos destacados y sección mayorista
+│   └── `app.js`                ← Animaciones y lógica interactiva
+├── `index.php`                 ← Página principal con maqueta y secciones
 ├── `productos.php`             ← Catálogo visual de productos
 ├── `nosotros.php`              ← Página de marca y valores
-├── `ubicacion.php`             ← Página con mapa y dirección
-├── `contacto.php`              ← Formulario de contacto y teléfono
+├── `ubicacion.php`             ← Página con ubicación y mapa
+├── `contacto.php`              ← Formulario de contacto
 └── `README.md`                 ← Documentación del proyecto
 
-## Maqueta de la Página
+## 🖼️ Maqueta y estructura de la página
 
-La página está organizada en secciones visuales:
+La maqueta del sitio está construida principalmente en `index.php` y se organiza así:
 
-- `index.php`
-  - Hero con imagen destacada, título y botón de acción.
-  - Sección de "Colección Destacada" con tres tarjetas de producto.
-  - Sección de "Suscripciones al por mayor" con tres planes mayoristas.
-  - Bloque de marca "Nuestra esencia" con valores y estilo.
-  - Llamado a la acción final para explorar el catálogo.
+- **Navbar**: menú fijo con enlaces a las páginas principales.
+- **Hero**: imagen destacada, mensaje de marca, botón de llamada a la acción.
+- **Colección Destacada**: tres tarjetas de producto con imágenes.
+- **Sección mayorista**: tres planes ficticios para ventas al por mayor.
+- **Nuestra esencia**: propuesta de valor de la marca y sus atributos.
+- **Galería secundaria**: presentación visual adicional con overlay.
+- **CTA final**: invitación a visitar el catálogo.
 
-- `productos.php`
-  - Galería de productos con tarjetas responsivas.
-  - Filtro visual por categoría.
-  - Diseño enfocado en mostrar imágenes y colección sin precios.
+## 🛠️ Funcionalidades clave
 
-- `nosotros.php`
-  - Contenido de marca con historia y valores.
-  - Diseño de presentación simple y elegante.
+- **Validación de formulario** en frontend y backend.
+- **Formulario AJAX** con envío a `includes/process_contact.php`.
+- **Mapa embebido** en `ubicacion.php` con Google Maps.
+- **Animaciones suaves** en la entrada de secciones y tarjetas.
+- **Estructura modular** con cabecera y pie comunes en `includes/`.
 
-- `ubicacion.php`
-  - Mapa de Google embebido en contenedor responsivo.
-  - Información de dirección y teléfono en panel lateral.
+## 📊 Base de datos
 
-- `contacto.php`
-  - Formulario con campos de nombre, teléfono, email, asunto y mensaje.
-  - Validación de datos en frontend y backend.
-
-## Tecnologías Utilizadas
-
-- PHP
-- Bootstrap 5 (local en `bootstrap/`)
-- JavaScript puro
-- MySQL / MariaDB (para almacenamiento de contactos)
-- Font Awesome CDN (iconos)
-
-## Backend y Validación
-
-- `includes/config.php` maneja la conexión a la base de datos y define funciones de sanitización y validación.
-- `includes/process_contact.php` procesa el formulario de contacto y guarda el mensaje en la base de datos.
-
-Funciones principales:
-
-- `sanitizeInput()` — Sanitiza la entrada del usuario.
-- `isValidEmail()` — Valida formato de email.
-- `isValidPhone()` — Valida números de teléfono básicos.
-
-## Base de Datos
-
-El proyecto espera una base de datos `kf_american_flow` con una tabla `contactos`.
+El proyecto espera una base de datos MySQL llamada `kf_american_flow` y una tabla `contactos`.
 
 Campos esperados:
 
@@ -87,25 +101,17 @@ Campos esperados:
 - `fecha_creacion`
 - `estado`
 
-## Notas de Diseño
+> Nota: no se incluye script SQL en este repositorio.
 
-- El header está fijado y el body incluye espacio superior para evitar solapamiento.
-- El mapa de ubicación se presenta en un contenedor con bordes redondeados y responsive.
-- Se implementan animaciones suaves en la entrada de secciones.
-- La sección mayorista se muestra con propuestas realistas de volumen y soporte.
+## 🚀 Cómo ejecutar
 
-## Revisión de Contenido Real
+1. Copia el proyecto en un servidor PHP local (XAMPP, WAMP, Laragon, etc.).
+2. Activa MySQL.
+3. Ajusta las credenciales en `includes/config.php`.
+4. Abre `index.php` en el navegador.
 
-El repositorio contiene exclusivamente los archivos y carpetas listados en la "Estructura de Archivos". No hay scripts de instalación adicionales ni dependencias externas aparte de Bootstrap local y Font Awesome CDN.
+## 📌 Observaciones
 
-## Cómo Trabajar con el Proyecto
-
-- Ejecuta el proyecto en un servidor PHP local.
-- Ajusta las credenciales de MySQL en `includes/config.php` si es necesario.
-- Abre `index.php` para revisar la maqueta.
-- `contacto.php` y `includes/process_contact.php` manejan la comunicación de formularios.
-
-## Contacto principal
-
-- Teléfono: `809 395 5980`
-- El email no se muestra públicamente en el menú; se utiliza internamente en el formulario.
+- El proyecto es una maqueta de presentación, no una tienda con pago real.
+- El contacto principal se maneja por teléfono: `809 395 5980`.
+- El email se utiliza solo dentro del formulario de contacto.
