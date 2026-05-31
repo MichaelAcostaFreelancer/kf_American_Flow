@@ -1,14 +1,14 @@
-﻿# K.F American Flow
-
-Sitio web de presentación para boutique de moda urbana americana.
+﻿# K.F AMERICAN FLOW
 
 Versión final del proyecto: **1.0.0-final**
+
+Sitio web responsivo de presentación para boutique de moda urbana americana, construido con PHP, Bootstrap 5 local y JavaScript puro.
 
 ## 📌 Estado del proyecto
 
 - Versión final para entrega.
-- Navegación fija y responsive para escritorio y móvil.
-- Sección mayorista ficticia añadida para presentaciones B2B.
+- Navegación fija y responsive en escritorio y móvil.
+- Sección mayorista ficticia para ofertas B2B.
 - Formulario de contacto con validación y backend PHP.
 - Mapa integrado en `ubicacion.php`.
 - No hay `package.json`, `node_modules` ni herramientas de build.
@@ -17,20 +17,20 @@ Versión final del proyecto: **1.0.0-final**
 
 ### Secciones
 
-- **Hero**: Banner principal con título, texto y botón CTA.
-- **Colección Destacada**: Tres tarjetas de producto en la página de inicio.
-- **Mayoristas**: Sección de planes ficticios para pedidos grandes.
-- **Nuestra esencia**: Bloque de valores y mensaje de marca.
-- **Productos**: Catálogo visual de productos.
-- **Ubicación**: Mapa de Google Maps embebido.
-- **Contacto**: Formulario con campos obligatorios y envío al backend.
+- **Hero**: Banner de apertura con imagen destacada, texto y botón CTA.
+- **Colección Destacada**: Tarjetas visuales de producto en la página principal.
+- **Mayoristas**: Sección de planes ficticios para ventas al por mayor.
+- **Nuestra esencia**: Mensaje de marca y valores diferenciales.
+- **Productos**: Catálogo visual con tarjetas responsivas.
+- **Ubicación**: Página de mapa embebido con datos de contacto.
+- **Contacto**: Formulario con validación y envío a backend PHP.
 
 ### Tecnologías
 
 #### Frontend
 
 - HTML5 semántico
-- Bootstrap 5 local (`bootstrap/css`, `bootstrap/js`)
+- Bootstrap 5 local
 - CSS personalizado en `css/style.css`
 - JavaScript nativo en `js/app.js`
 - Font Awesome CDN para iconos
@@ -44,46 +44,56 @@ Versión final del proyecto: **1.0.0-final**
 
 ## 📁 Estructura del proyecto
 
+```
 proyecto_final/
-├── `bootstrap/`                ← Librería Bootstrap local
-│   ├── `css/`
-│   └── `js/`
-├── `css/`
-│   └── `style.css`             ← Estilos personalizados
-├── `fotos/`                    ← Imágenes locales del sitio
-├── `includes/`                 ← Componentes y backend PHP
-│   ├── `config.php`            ← Configuración de base de datos y validación
-│   ├── `footer.php`            ← Pie de página global
-│   ├── `header.php`            ← Cabecera fija y navbar
-│   └── `process_contact.php`   ← Envío y guardado de formulario
-├── `js/`
-│   └── `app.js`                ← Animaciones, validación y lógica interactiva
-├── `index.php`                 ← Página principal con maqueta y secciones
-├── `productos.php`             ← Catálogo visual de productos
-├── `nosotros.php`              ← Página de marca y valores
-├── `ubicacion.php`             ← Página con mapa y dirección
-├── `contacto.php`              ← Formulario de contacto
-└── `README.md`                 ← Documentación del proyecto
+├── bootstrap/                  # Librería Bootstrap local
+│   ├── css/
+│   └── js/
+├── css/
+│   └── style.css               # Estilos personalizados
+├── fotos/                      # Imágenes locales usadas en el sitio
+├── includes/                   # Componentes y backend PHP
+│   ├── config.php              # Conexión y validación
+│   ├── footer.php              # Pie de página compartido
+│   ├── header.php              # Cabecera fija y navegador
+│   └── process_contact.php     # Envío y guardado de formulario
+├── js/
+│   └── app.js                  # Animaciones y lógica interactiva
+├── index.php                   # Página principal con maqueta
+├── productos.php               # Catálogo visual de productos
+├── nosotros.php                # Página de marca y valores
+├── ubicacion.php               # Página con ubicación y mapa
+├── contacto.php                # Formulario de contacto
+└── README.md                   # Documentación del proyecto
+```
 
 ## 🖼️ Maqueta de la página
 
-La maqueta del sitio se organiza principalmente en `index.php`:
+La maqueta se organiza de esta forma:
 
-- **Navbar fijo** con enlaces a secciones principales.
-- **Hero** con imagen de portada, título y botón de llamada a la acción.
-- **Colección destacada** con tarjetas de producto sin precios.
-- **Sección mayorista** con tres planes de venta al por mayor.
-- **Bloque de marca** con valores y mensaje de estilo.
+- **Navbar fijo** con enlaces a las páginas clave.
+- **Hero** con imagen de apertura, título y botón.
+- **Colección destacada** con tarjetas de producto.
+- **Sección mayorista** para presentar planes B2B.
+- **Bloque de marca** con valores, estilo y distintivos.
 - **Galería secundaria** con imagen de apoyo y overlay.
-- **CTA final** para invitar a explorar el catálogo.
+- **CTA final** invitando a visitar el catálogo.
 
 ## 🛠️ Funcionalidades JavaScript
 
 - **Navegación responsive**: menú colapsable en móvil.
-- **Scroll animations**: entradas suaves para secciones con `IntersectionObserver`.
-- **Validación de formulario**: validación en frontend antes del envío.
-- **Envío AJAX**: formulario de `contacto.php` se envía a `includes/process_contact.php`.
-- **Animaciones de tarjetas**: hover y transiciones en tarjetas de producto.
+- **Animaciones de entrada**: efectos suaves en secciones.
+- **Validación de formulario**: comprobaciones antes del envío.
+- **Envío al backend**: el formulario envía los datos a `includes/process_contact.php`.
+- **Hover en tarjetas**: transiciones y elevación visual.
+
+## 🎨 Paleta de colores
+
+- **Negro**: `#000000`
+- **Blanco**: `#FFFFFF`
+- **Dorado**: `#c0a080`
+- **Gris oscuro**: `#1a1a1a`
+- **Gris claro**: `#f5f5f5`
 
 ## 📊 Base de datos
 
@@ -100,7 +110,7 @@ Campos esperados:
 - `fecha_creacion`
 - `estado`
 
-> Nota: el script SQL no está incluido en el repositorio.
+> Nota: no se incluye script SQL en el repositorio.
 
 ## 🚀 Cómo ejecutar
 
@@ -111,7 +121,7 @@ Campos esperados:
 
 ## 📌 Observaciones
 
-- Este proyecto es una maqueta de presentación, no un ecommerce real.
+- El proyecto es una maqueta de presentación, no un ecommerce completo.
 - El contacto principal se maneja por teléfono: `809 395 5980`.
-- El email se usa solo dentro del formulario de contacto.
-- No hay scripts de build, dependencias npm ni entornos de compilación.
+- El email se usa únicamente en el formulario de contacto.
+- No hay `package.json`, `node_modules` ni entorno de build.
